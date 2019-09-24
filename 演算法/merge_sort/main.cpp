@@ -1,22 +1,24 @@
 #include <iostream>
 using namespace std;
 
-int merge(int A[], int p, int q, int r){
+void merge(int A[], int p, int q, int r){
 	int n1 = q - p + 1;
 	int n2 = r - q;
-	int* L1 = new int [n1];
-	int* L2 = new int [n2];
-	for(int i = 0; i < sizeof(L1)/sizeof(L1[0]); i++){
+	int* L1 = new int [n1+1];
+	int* L2 = new int [n2+1];
+	L1[0] = 0;
+	L2[0] = 0;
+	for(int i = 1; i <= n1; i++){
 		L1[i] = A[p + i - 1];
 	}
-	for(int i = 0; i < sizeof(L2)/sizeof(L2[0]); i++){
+	for(int i = 1; i <= n2; i++){
 		L2[i] = A[q + i];
 	}
-	L1[n1+1] = 999999;
-	L2[n2+1] = 999999;
+	L1[n1+1] = 99999999;
+	L2[n2+1] = 99999999;
 	
 	int p1 = 1, p2 = 1;
-	for(int i = p; i < r; i++){
+	for(int i = p; i <= r; i++){
 		if(L1[p1] <= L2[p2]){
 			A[i] = L1[p1];
 			p1++;
@@ -25,18 +27,17 @@ int merge(int A[], int p, int q, int r){
 			p2++;
 		}
 	}
-		
-	return 0;
+	
 }
 
-int merge_sort(int A[], int p, int r){
+void merge_sort(int A[], int p, int r){
 	if(r > p){
 		int q = (p + r) / 2;
 		merge_sort(A, p, q);
 		merge_sort(A, q+1, r);
 		merge(A, p, q, r);
 	}
-	return 0;
+	
 }
 
 int main() {
@@ -46,7 +47,7 @@ int main() {
 	
 	merge_sort(A, p, r);
 	
-	for(int i = 0; i < r; i++){
+	for(int i = 1; i < r+1; i++){
 		cout<< A[i]<< " ";
 	}
 	return 0;
