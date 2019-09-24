@@ -1,0 +1,7 @@
+insertion sort
+時間:n^2
+空間:in place
+
+merge sort
+時間:n*log(n)
+空間:n
