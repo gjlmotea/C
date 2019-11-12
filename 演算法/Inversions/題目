@@ -1,0 +1,31 @@
+Let A[1.. n] be an array of n distinct numbers. If i < j and A[i] > A[j],
+then the pair (i, j) is called an inversion of A. Give an algorithm and
+develop the program that determines the number of inversions in any
+permutation on n elements in Θ(nlgn) worst-case time. (CLRS
+Problems 2-4 & Hint: Modify merge sort.)
+
+在陣列中尋找逆序對的數量。
+(逆序對:在陣列排前面的數字 大於排後面的數字者)
+
+input:
+5
+20
+31
+82
+64
+17
+
+
+
+output:
+5
+
+
+
+因為
+20 > 17
+31 > 17
+82 > 64
+82 > 17
+64 > 17
+所以output為5
