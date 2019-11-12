@@ -51,7 +51,7 @@ void merge_sort(int array[], int L, int R){	//切割
 		int M = (L + R) / 2;
 		//cout << "M:" << M <<endl;
 		merge_sort(array, L, M);		//從最左側到中間
-		merge_sort(array, M + 1, R);	//從中間到最右側
+		merge_sort(array, M + 1, R);		//從中間到最右側
 		merge(array, L, M, R); 			//將左右的切割合併
 	}
 	
@@ -75,7 +75,7 @@ int main() {
 	merge_sort(array, L, R);
 	
 	for(int i = 1; i < R+1; i++){
-		cout<< i << ": " << array[i]<< endl;
+		cout<< i << ":\t " << array[i]<< endl;
 	}
 	return 0;
 }
