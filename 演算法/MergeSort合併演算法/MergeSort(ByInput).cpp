@@ -1,4 +1,5 @@
 #include <iostream>
+#include <climits> 
 using namespace std;
 
 void merge(int array[], int L, int M, int R){	//合併
