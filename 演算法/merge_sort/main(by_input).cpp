@@ -43,13 +43,13 @@ void merge(int array[], int L, int M, int R){	//合併
 			p2++;
 		}
 	}
-	
+	delete[] L1, L2;
 }
 
 void merge_sort(int array[], int L, int R){	//切割 
 	if(R > L){
 		int M = (L + R) / 2;
-		cout << "M:" << M <<endl;
+		//cout << "M:" << M <<endl;
 		merge_sort(array, L, M);		//從最左側到中間
 		merge_sort(array, M + 1, R);	//從中間到最右側
 		merge(array, L, M, R); 			//將左右的切割合併
@@ -75,7 +75,7 @@ int main() {
 	merge_sort(array, L, R);
 	
 	for(int i = 1; i < R+1; i++){
-		cout<< array[i]<< " ";
+		cout<< i << ": " << array[i]<< endl;
 	}
 	return 0;
 }
