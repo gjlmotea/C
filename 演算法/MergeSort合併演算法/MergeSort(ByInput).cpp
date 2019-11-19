@@ -44,7 +44,6 @@ void merge(int array[], int L, int M, int R){	//合併
 			p2++;
 		}
 	}
-	//delete[] L1, L2;
 }
 
 void merge_sort(int array[], int L, int R){	//切割 
